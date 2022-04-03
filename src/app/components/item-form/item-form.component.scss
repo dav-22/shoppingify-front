@@ -1,0 +1,34 @@
+.main {
+    .title {
+        height: 15%;
+    }
+
+    form {
+        padding-right: 2rem;
+        height: 70%;
+    }
+
+    .buttons {
+        height: 15%;
+
+        .btn-save {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            font-size: smaller;
+        }
+
+        .btn-cancel {
+            font-size: smaller;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+    }
+}

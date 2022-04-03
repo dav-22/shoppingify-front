@@ -1,0 +1,54 @@
+.main {
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+
+    .mark {
+        height: 35px;
+        width: 3px;
+        border-radius: 2px;
+        background-color: orange;
+    }
+
+    .header {
+        height: 25%;
+        width: 100%;
+
+        .heart {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: #3F3D56;
+
+            i {
+                color: orange;
+                font-size: x-large;
+            }
+        }
+    }
+
+    .menu {
+        height: 50%;
+        width: 100%;
+        
+        .items, .history, .stats {
+            gap: 20px;
+        }
+    }
+
+    .footer {
+        height: 25%;
+        width: 100%;
+
+        .buy {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: orange;
+            i {
+                color: white;
+                font-size: x-large;
+            }
+        }
+    }
+}

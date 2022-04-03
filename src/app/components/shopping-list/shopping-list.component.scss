@@ -1,0 +1,113 @@
+.main {
+    background-color: #FFF0DE;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    .add {
+        height: 150px;
+        max-height: 150px;
+        border-radius: 20px;
+        width: 100%;
+        background-color: #80485B;
+
+        h3 {
+            color: white;
+        }
+
+        i {
+            padding-left: 1rem;
+            color: #3F3D56;
+        }
+
+        .btn-add {
+            font-size: smaller;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+    }
+
+    .title {
+        span {
+            font-size: x-large;
+        }
+
+        i {
+            font-size: medium;
+            cursor: pointer;
+        }
+    }
+
+    .list {
+        padding-right: 1rem;
+        max-height: 50%;
+        overflow-y: scroll;
+        .category {
+
+            small {
+                color: gray;
+                font-weight: bold;
+            }
+        }
+        
+        .item {
+            span {
+                font-weight: bold;
+                font-size: medium;
+            }
+
+            .count {
+                width: 80px;
+                border: 2px solid orange;
+                border-radius: 15px;
+                height: 30px;
+
+                color: orange;
+                i{
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+    }
+
+    .save {
+        padding-top: 0.5rem;
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            font-size: smaller;
+        }
+    }
+
+    /* width */
+  ::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: orange; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+  }
+}

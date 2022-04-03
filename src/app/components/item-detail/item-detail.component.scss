@@ -1,0 +1,55 @@
+.main {
+    padding-right: 2rem;
+    padding-top: 1rem;
+    span {
+        font-weight: bold;
+    }
+
+    .back {
+        color: orange;
+        cursor: pointer;
+    }
+
+    .label {
+        color: gray;
+    }
+
+    .img {
+        max-height: 200px;
+        width: 100%;
+        border: 1px solid #ccc;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .name {
+        span {
+            
+            font-size: x-large;
+        }
+    }
+
+    .buttons {
+        height: 15%;
+
+        .btn-save {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            font-size: smaller;
+        }
+
+        .btn-cancel {
+            font-size: smaller;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+    }
+}

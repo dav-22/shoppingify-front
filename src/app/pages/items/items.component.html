@@ -1,0 +1,19 @@
+<div class="main justify-content-between d-flex gap-3 h-100">
+    <app-side-bar style="width: 15%;"></app-side-bar>
+    <div class="items d-flex flex-column">
+        <div class="title d-flex align-items-center">
+            <h1>Lista de productos a comprar</h1>
+        </div>
+
+        <div class="list">
+            <h3 class="mb-3">Frutas y verduras</h3>
+            <app-item-card [name]="'Tomate'"></app-item-card>
+        </div>
+    </div>
+
+    <div class="right-side">
+        <!-- <app-item-form></app-item-form> -->
+        <!-- <app-item-detail></app-item-detail> -->
+        <app-shopping-list></app-shopping-list>
+    </div>
+</div>
