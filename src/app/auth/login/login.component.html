@@ -1,0 +1,28 @@
+<div class="main d-flex justify-content-center align-items-center p-3">
+  <div class="login d-flex align-items-center justify-content-around flex-column p-2">
+    <h2>Iniciar sesión</h2>
+    <form [formGroup]="formGroup" class="w-75 d-flex flex-column gap-3">
+      <div class="d-flex align-items-center gap-1">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-form-field class="example-full-width w-100" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-form-field class="example-full-width w-100" appearance="fill">
+          
+          <mat-icon matSuffix>remove_red_eye</mat-icon>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+    </form>
+
+    <button [disabled]="formGroup.invalid" (click)="login()" class="w-75">Entrar</button>
+
+    <span>Registrarse</span>
+  </div>
+</div>
