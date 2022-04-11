@@ -7,7 +7,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,17 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     ItemCardComponent,
     ItemFormComponent,
     ItemDetailComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    AddCategoryDialogComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatIconModule,
+    MatDialogModule
   ],
   exports: [
     SideBarComponent,

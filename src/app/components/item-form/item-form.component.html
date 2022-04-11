@@ -3,26 +3,41 @@
     <h1>Agregar producto</h1>
   </div>
 
-  <form class="d-flex flex-column justify-content-between">
+  <form class="d-flex flex-column justify-content-between" [formGroup]="form">
     <mat-form-field class="example-full-width w-100" appearance="fill">
       <mat-label>Nombre</mat-label>
-      <input matInput />
+      <input matInput formControlName="name" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-100" appearance="fill">
       <mat-label>Descripción</mat-label>
-      <textarea matInput placeholder="Descripción del producto..."></textarea>
+      <textarea matInput placeholder="Descripción del producto..." formControlName="description" ></textarea>
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-100" appearance="fill">
       <mat-label>Imágen</mat-label>
-      <input matInput />
+      <input matInput formControlName="image" />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width w-100" appearance="fill">
-      <mat-label>Categoria</mat-label>
-      <input matInput />
-    </mat-form-field>
+    <div class="d-flex align-items-center">
+      <mat-form-field class="example-full-width w-100" appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <input type="text"
+            placeholder="Pick one"
+            aria-label="Number"
+            matInput
+            formControlName="category_id"
+            [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of [1,2,3]" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      <mat-icon (click)="openDialog()">add_circle</mat-icon>
+
+    </div>
+      
   </form>
 
   <div class="buttons d-flex gap-3 justify-content-center align-items-center">

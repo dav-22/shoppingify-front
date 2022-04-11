@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AddCategoryDialogComponent } from '../add-category-dialog/add-category-dialog.component';
 
 @Component({
   selector: 'app-item-form',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemFormComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private _fb: FormBuilder, public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.form = this.buildForm();
   }
 
+  buildForm(): FormGroup {
+    return this._fb.group({
+      name: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      image: ['', [Validators.required]],
+      category_id: ['', [Validators.required]],
+
+    });
+  }
+
+  openDialog() {
+    this.dialog.open(AddCategoryDialogComponent, {
+      
+      width: '300px'
+      
+    });
+  }
 }
+
+

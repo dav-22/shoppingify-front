@@ -1,0 +1,15 @@
+
+  <div mat-dialog-title>
+      <h1>Agregar categoria</h1>
+  </div>
+  <div mat-dialog-content>
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <input matInput  [formControl]="categoryControl"/>
+    </mat-form-field>
+    
+  </div>
+  <div mat-dialog-actions>
+
+    <button class="btn-save" [disabled]="categoryControl.invalid" (click)="add()">Guardar</button>
+  </div>
