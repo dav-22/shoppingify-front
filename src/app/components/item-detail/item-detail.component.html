@@ -1,20 +1,22 @@
 <div class="main w-100 h-100 d-flex justify-content-between flex-column">
   <div class="back d-flex align-items-center gap-1">
-    <i class="fa-solid fa-left-long"></i>
+    <i class="fa-solid fa-left-long" (click)="back()"></i>
     <small>volver</small>
   </div>
-  <div class="img"></div>
+  <div class="img">
+    <img src="assets/images/no_images.png" alt="">
+  </div>
   <div class="name d-flex gap-1 flex-column">
     <small class="label">Nombre</small>
-    <span class="text">Tomate</span>
+    <span class="text">{{ item ? item.name : ''}}</span>
   </div>
   <div class="category gap-1 d-flex flex-column">
     <small class="label">Categoria</small>
-    <span class="text">Fruta - Verdura</span>
+    <span class="text">{{ item ? item.category.name : 0}}</span>
   </div>
   <div class="description gap-1 d-flex flex-column">
     <small class="label">Descripción</small>
-    <span class="text">Esto es una descripcion de la fruta llamada Tomate</span>
+    <span class="text">{{ item && item.description ? item.description : '-'}}</span>
    
   </div>
   <div class="buttons d-flex gap-3 justify-content-center align-items-center">

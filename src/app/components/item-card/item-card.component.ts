@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'app-item-card',
@@ -6,11 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./item-card.component.scss']
 })
 export class ItemCardComponent implements OnInit {
-  @Input() name: string = '';
+  @Output() itemDetail: EventEmitter<Item> = new EventEmitter<Item>();
+  @Input() item: Item;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  setDetail() {
+    this.itemDetail.emit(this.item);
+    console.log('card > ', this.item);
+    
+  }
 }

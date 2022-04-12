@@ -1,19 +1,25 @@
 <div class="main justify-content-between d-flex gap-3 h-100">
-    <app-side-bar style="width: 15%;"></app-side-bar>
-    <div class="items d-flex flex-column">
-        <div class="title d-flex align-items-center">
-            <h1>Lista de productos a comprar</h1>
-        </div>
-
-        <div class="list">
-            <h3 class="mb-3">Frutas y verduras</h3>
-            <app-item-card [name]="'Tomate'"></app-item-card>
-        </div>
+  <app-side-bar style="width: 15%"></app-side-bar>
+  <div class="items d-flex flex-column">
+    <div class="title d-flex align-items-center">
+      <h1>Lista de productos a comprar</h1>
     </div>
 
-    <div class="right-side">
-        <app-item-form></app-item-form>
-        <!-- <app-item-detail></app-item-detail> -->
-        <!-- <app-shopping-list></app-shopping-list> -->
+    <div class="list" *ngFor="let c of categories">
+      <h3 class="mb-3 mt-3" *ngIf="c.items.length > 0">{{ c.name }}</h3>
+      <div class="products">
+        <app-item-card
+          *ngFor="let i of c.items"
+          [item]="i"
+          (itemDetail)="setDetail($event)"
+        ></app-item-card>
+      </div>
     </div>
+  </div>
+
+  <div class="right-side">
+    <app-item-form *ngIf="show === 1"></app-item-form>
+    <app-item-detail [item]="item" *ngIf="show === 2" (goBack)="show = $event"></app-item-detail>
+    <!-- <app-shopping-list></app-shopping-list> -->
+  </div>
 </div>

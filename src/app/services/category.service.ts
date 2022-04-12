@@ -18,4 +18,8 @@ export class CategoryService {
     return this._http.post<Category>(`${this.url}/${this.controller}`, category);
   }
 
+  all(): Observable<Category[]> {
+    return this._http.get<Category[]>(`${this.url}/${this.controller}`);
+  }
+
 }

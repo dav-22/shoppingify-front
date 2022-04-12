@@ -23,14 +23,14 @@
       <mat-form-field class="example-full-width w-100" appearance="fill">
         <mat-label>Categoria</mat-label>
         <input type="text"
-            placeholder="Pick one"
+            placeholder="Elegir uno"
             aria-label="Number"
             matInput
-            formControlName="category_id"
+            formControlName="categoryId"
             [matAutocomplete]="auto">
           <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let option of [1,2,3]" [value]="option">
-              {{option}}
+            <mat-option *ngFor="let option of categories" [value]="option.name">
+              {{ option.name }}
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
@@ -42,6 +42,6 @@
 
   <div class="buttons d-flex gap-3 justify-content-center align-items-center">
     <button class="btn-cancel">CANCELAR</button>
-    <button class="btn-save">GUARDAR</button>
+    <button class="btn-save" (click)="addOne()" [disabled]="form.invalid">GUARDAR</button>
   </div>
 </div>
