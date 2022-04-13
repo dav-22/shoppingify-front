@@ -80,7 +80,7 @@
     .save {
         padding-top: 0.5rem;
         button {
-            padding: 15px;
+            padding: 10px 15px;
             border: none;
             border-radius: 10px;
             background-color: orange;
@@ -98,7 +98,7 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #FFF0DE;
   }
    
   /* Handle */
@@ -110,4 +110,12 @@
   ::-webkit-scrollbar-thumb:hover {
     background: gray; 
   }
+}
+
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    .main {
+        .title {
+            margin: 1rem 0;
+        }
+    }
 }

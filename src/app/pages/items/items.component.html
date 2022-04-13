@@ -12,14 +12,15 @@
           *ngFor="let i of c.items"
           [item]="i"
           (itemDetail)="setDetail($event)"
+          (itemToAdd)="addItem($event)"
         ></app-item-card>
       </div>
     </div>
   </div>
 
   <div class="right-side">
-    <app-item-form *ngIf="show === 1"></app-item-form>
-    <app-item-detail [item]="item" *ngIf="show === 2" (goBack)="show = $event"></app-item-detail>
-    <!-- <app-shopping-list></app-shopping-list> -->
+    <!-- <app-item-form *ngIf="show === 1"></app-item-form>
+    <app-item-detail [item]="item" *ngIf="show === 2" (goBack)="show = $event"></app-item-detail> -->
+    <app-shopping-list [itemList]="itemList"></app-shopping-list>
   </div>
 </div>

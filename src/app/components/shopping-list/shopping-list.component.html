@@ -11,78 +11,48 @@
   </div>
 
   <div class="title d-flex justify-content-between align-items-center">
-    <span>Titulo de la lista</span>
-    <i class="fa-solid fa-pencil"></i>
+    <span>{{ !listName.value ? "Titulo de la lista" : listName.value }}</span>
+    <!-- <i class="fa-solid fa-pencil"></i> -->
   </div>
 
   <div class="list h-50">
-    <div>
-      <div class="category pb-4">
-        <small>Fruta - verdura</small>
-      </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
+    <div *ngIf="itemList.length > 0">
+      <div *ngFor="let il of itemList">
+        <!-- <div class="category pb-4">
+          <small>Fruta - verdura</small>
+        </div> -->
+        <div
+          class="item d-flex align-items-center justify-content-between pb-4"
+        >
+          <span>{{ il.item.name }}</span>
+          <div class="count d-flex justify-content-around align-items-center">
+            <i class="fa-solid fa-minus" (click)="decrease(il)"></i>
+            <span>{{ il.count }}</span>
+            <i class="fa-solid fa-plus" (click)="increment(il)"></i>
+          </div>
         </div>
       </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center justify-content-between pb-4">
-        <span>Tomate</span>
-        <div class="count d-flex justify-content-around align-items-center">
-          <i class="fa-solid fa-minus"></i>
-          <span>1</span>
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </div>
-      
     </div>
-    
-      
+
+    <div
+      class="h-100 no-items d-flex justify-content-center align-items-center"
+      *ngIf="itemList.length == 0"
+    >
+      <h3>No hay productos todavia</h3>
+    </div>
   </div>
 
-  <div class="save d-flex align-items-center justify-content-center">
-    <button class="btn-save">Guardar</button>
+  <div class="save d-flex align-items-center justify-content-center gap-2">
+    <mat-form-field class="example-full-width w-100" appearance="fill">
+      <mat-label>Nombre de la lista</mat-label>
+      <input matInput [formControl]="listName" />
+    </mat-form-field>
+    <button
+      class="btn-save"
+      [disabled]="listName.invalid || itemList.length == 0"
+      (click)="saveList()"
+    >
+      Guardar
+    </button>
   </div>
 </div>

@@ -8,8 +8,9 @@ import { Item } from 'src/app/models/item';
 })
 export class ItemCardComponent implements OnInit {
   @Output() itemDetail: EventEmitter<Item> = new EventEmitter<Item>();
+  @Output() itemToAdd: EventEmitter<Item> = new EventEmitter<Item>();
   @Input() item: Item;
-
+  
   constructor() { }
 
   ngOnInit() {
@@ -17,7 +18,11 @@ export class ItemCardComponent implements OnInit {
 
   setDetail() {
     this.itemDetail.emit(this.item);
-    console.log('card > ', this.item);
     
+    
+  }
+
+  addItem() {
+    this.itemToAdd.emit(this.item);
   }
 }
