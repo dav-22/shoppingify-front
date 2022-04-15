@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ShoppingService } from 'src/app/services/shopping.service';
@@ -9,6 +9,7 @@ import { ShoppingService } from 'src/app/services/shopping.service';
   styleUrls: ['./shopping-list.component.scss']
 })
 export class ShoppingListComponent implements OnInit {
+  @Output() goToAdd: EventEmitter<number> = new EventEmitter<number>();
   @Input() itemList: any[];
 
   listName: FormControl = new FormControl('', [Validators.required]);
@@ -52,5 +53,9 @@ export class ShoppingListComponent implements OnInit {
       })
 
         
+  }
+
+  addItem() {
+    this.goToAdd.emit(1);
   }
 }

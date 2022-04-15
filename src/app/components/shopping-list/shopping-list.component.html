@@ -6,12 +6,12 @@
     </div> -->
     <div class="d-flex flex-column justify-content-around align-items-center">
       <h3 class="text-center">No encontras algún producto?</h3>
-      <button class="btn-add">Agregar</button>
+      <button class="btn-add" (click)="addItem()">Agregar</button>
     </div>
   </div>
 
-  <div class="title d-flex justify-content-between align-items-center">
-    <span>{{ !listName.value ? "Titulo de la lista" : listName.value }}</span>
+  <div class="title d-flex justify-content-center align-items-center">
+    <span>{{ !listName.value ? "Nombre de la lista" : listName.value }}</span>
     <!-- <i class="fa-solid fa-pencil"></i> -->
   </div>
 
@@ -43,7 +43,7 @@
   </div>
 
   <div class="save d-flex align-items-center justify-content-center gap-2">
-    <mat-form-field class="example-full-width w-100" appearance="fill">
+    <mat-form-field style="width: 60%;" appearance="fill">
       <mat-label>Nombre de la lista</mat-label>
       <input matInput [formControl]="listName" />
     </mat-form-field>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages.routing.module';
 import { ItemsComponent } from './items/items.component';
-import { HistoryComponent } from './history/history.component';
+import { HistorialComponent } from './historial/historial.component';
 import { StatsComponent } from './stats/stats.component';
 import { ComponentsModule } from '../components/components.module';
 
@@ -11,7 +11,7 @@ import { ComponentsModule } from '../components/components.module';
 @NgModule({
   declarations: [
     ItemsComponent,
-    HistoryComponent,
+    HistorialComponent,
     StatsComponent
   ],
   imports: [

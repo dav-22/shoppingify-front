@@ -15,7 +15,7 @@ export class ItemsComponent implements OnInit {
   item: Item;
   itemToAdd: Item;
   categories: Category[];
-  show: number = 1;
+  show: number = 3;
   itemList:any[] = [];
 
   constructor(
@@ -51,7 +51,7 @@ export class ItemsComponent implements OnInit {
 
   addItem(e: Item) {
     this.itemToAdd = e;
-    console.log(e);
+    this.show = 3;
     if(this.itemList.length == 0) {
 
       this.itemList.push({item: this.itemToAdd, count: 1});

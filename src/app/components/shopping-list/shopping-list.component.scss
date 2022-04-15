@@ -33,6 +33,7 @@
     }
 
     .title {
+        padding: 1rem 0;
         span {
             font-size: x-large;
         }
@@ -79,6 +80,7 @@
 
     .save {
         padding-top: 0.5rem;
+        width: 100%;
         button {
             padding: 10px 15px;
             border: none;

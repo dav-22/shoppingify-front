@@ -1,59 +1,89 @@
 .main {
+  width: 100%;
+
+  .content {
+    width: 85%;
+
     .items {
-        width: 55%;
+      // width: 55%;
+      width: 70%;
+      .title {
+        height: 15%;
+      }
 
-        .title {
-            height: 15%;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            align-items: center;
-            justify-content: center;
-        }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .right-side {
-
-        width: 25%;
+      width: 30%;
     }
-
-
+  }
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (min-width: 801px) and (max-width: 1115px) {
     .main {
-        .items {
-            width: 45%;
-        }
+        .content {
 
-        .right-side {
-            width: 35%;
+            .items {
+                width: 65%;
+            }
+    
+            .right-side {
+                width: 35%;
+            }
         }
     }
 }
-
+@media screen and  (min-width: 200px) and (max-width: 591px) {
+    .list {
+        display: flex;
+        align-items: center;
+    }
+}
 @media screen and (min-width: 200px) and (max-width: 800px) {
     .main {
         display: flex;
-        flex-direction: column;
+        
 
-        .right-side {
-            width: 100%;
-            // padding: 1.5rem;
-            
-            // padding-left: 1.5rem;
-            
-        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            .right-side {
+                width: 100%;
+                // padding: 2rem;
 
-        .items {
-            width: 100%;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
+                // padding-left: 1.5rem;
+            }
+        
+            .items {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                h1 {
+                    text-align: center;
+                }
+                .list {
+                    .category {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                    }   
+                    display: flex;
+                    flex-direction: column;
+                    // align-items: center;
+                }
+            }
         }
+    
     }
 }

@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ItemFormComponent,
     ItemDetailComponent,
     ShoppingListComponent,
-    AddCategoryDialogComponent
+    AddCategoryDialogComponent,
+    DeleteItemDialogComponent
   ],
   imports: [
     CommonModule,

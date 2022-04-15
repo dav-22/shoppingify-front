@@ -1,7 +1,8 @@
 .main {
   height: 100%;
-  width: 100%;
-  max-width: 300px;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
 
   .mark {
     height: 35px;
@@ -31,10 +32,13 @@
     height: 50%;
     width: 100%;
 
-    .items,
-    .history,
-    .stats {
-      gap: 20px;
+    // .items,
+    // .history,
+    // .stats {
+    //   // gap: 20px;
+    // }
+    i {
+      margin: 0 1rem;
     }
   }
 
@@ -55,26 +59,19 @@
   }
 }
 
-.menu {
-    display: none;
-}
-
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 200px) and (max-width: 800px) {
   .main {
-    display: none;
+    // height: 100vh;
+    // position: fixed;
+    // width: 20%;
+    span {
+      display: none;
+    }
+    .heart, .buy {
+      i {
+        font-size: medium;
+      }
+    }
   }
 
-  .menu-side {
-
-    display: block;
-    padding: 1.5rem;
-    font-size: xx-large;
-    color: orange;
-  }
 }
-
-// @media screen and (min-width: 200px) and (max-width: 799px) {
-//     .main {
-//         display: none;
-//     }
-// }

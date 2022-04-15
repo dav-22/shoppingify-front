@@ -1,26 +1,42 @@
-<div class="main justify-content-between d-flex gap-3 h-100">
-  <app-side-bar style="width: 15%"></app-side-bar>
-  <div class="items d-flex flex-column">
-    <div class="title d-flex align-items-center">
-      <h1>Lista de productos a comprar</h1>
-    </div>
+<app-side-bar></app-side-bar>
+<div class="main d-flex justify-content-end h-100">
+  <div class="content d-flex gap-2">
+    <div class="items d-flex flex-column align-items-start h-100">
+      <div class="title d-flex align-items-center">
+        <h1>Lista de productos a comprar</h1>
+      </div>
 
-    <div class="list" *ngFor="let c of categories">
-      <h3 class="mb-3 mt-3" *ngIf="c.items.length > 0">{{ c.name }}</h3>
-      <div class="products">
-        <app-item-card
-          *ngFor="let i of c.items"
-          [item]="i"
-          (itemDetail)="setDetail($event)"
-          (itemToAdd)="addItem($event)"
-        ></app-item-card>
+      <div class="list w-100" *ngFor="let c of categories">
+        <div class="category">
+          <h3 class="mb-3 mt-3" *ngIf="c.items.length > 0">{{ c.name }}</h3>
+
+        </div>
+        <div class="products">
+          <app-item-card
+            *ngFor="let i of c.items"
+            [item]="i"
+            (itemDetail)="setDetail($event)"
+            (itemToAdd)="addItem($event)"
+          ></app-item-card>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="right-side">
-    <!-- <app-item-form *ngIf="show === 1"></app-item-form>
-    <app-item-detail [item]="item" *ngIf="show === 2" (goBack)="show = $event"></app-item-detail> -->
-    <app-shopping-list [itemList]="itemList"></app-shopping-list>
+    <div class="right-side h-100">
+      <app-item-form
+        *ngIf="show === 1"
+        (cancel)="show = $event"
+      ></app-item-form>
+      <app-item-detail
+        [item]="item"
+        *ngIf="show === 2"
+        (goBack)="show = $event"
+      ></app-item-detail>
+      <app-shopping-list
+        [itemList]="itemList"
+        *ngIf="show === 3"
+        (goToAdd)="show = $event"
+      ></app-shopping-list>
+    </div>
   </div>
 </div>

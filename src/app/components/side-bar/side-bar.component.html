@@ -6,21 +6,21 @@
   </div>
 
   <div class="menu d-flex flex-column justify-content-around">
-    <div class="items d-flex align-items-center">
-      <div class="mark"></div>
+    <div class="items d-flex align-items-center" (click)="goTo('items')">
+      <div class="mark" *ngIf="menuSelected === 1"></div>
       <i class="fa-solid fa-list"></i>
       <span>Items</span> 
     </div>
 
-    <div class="history d-flex align-items-center">
-      <div class="mark"></div>
+    <div class="history d-flex align-items-center" (click)="goTo('historial')">
+      <div class="mark" *ngIf="menuSelected === 2"></div>
       <i class="fa-solid fa-arrow-rotate-left"></i>
       <span>Historial</span> 
       
     </div>
 
-    <div class="stats d-flex align-items-center">
-      <div class="mark"></div>
+    <div class="stats d-flex align-items-center" (click)="goTo('stats')">
+      <div class="mark" *ngIf="menuSelected === 3"></div>
       <i class="fa-solid fa-chart-line"></i>
       <span>Estadisticas</span> 
       
@@ -32,8 +32,4 @@
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
   </div>
-</div>
-
-<div class="menu-side" (click)="showMenu()">
-  <i class="fa-solid fa-bars"></i>
 </div>

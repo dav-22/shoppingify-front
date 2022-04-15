@@ -22,4 +22,9 @@ export class ItemService {
   add(item: Item): Observable<Item> {
     return this._http.post<Item>(`${this.url}/${this.controller}`, item);
   }
+
+  delete(itemId: number): Observable<boolean> {
+    return this._http.delete<boolean>(`${this.url}/${this.controller}/${itemId}`)
+  }
+  
 }

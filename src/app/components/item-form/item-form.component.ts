@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -19,6 +19,8 @@ import { AddCategoryDialogComponent } from '../add-category-dialog/add-category-
   styleUrls: ['./item-form.component.scss'],
 })
 export class ItemFormComponent implements OnInit {
+  @Output() cancel: EventEmitter<number> = new EventEmitter<number>();
+  
   form: FormGroup;
   categories: Category[];
 
@@ -82,5 +84,9 @@ export class ItemFormComponent implements OnInit {
           this.toast.error('Erro al agregar producto', 'Error');
         }
       })
+  }
+
+  cancelAction() {
+    this.cancel.emit(3);
   }
 }

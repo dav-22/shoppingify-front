@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { iif } from 'rxjs';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,17 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-  show: boolean = false;
-  constructor() { }
+  menuSelected: number;
+
+
+  constructor(private _router: Router) { }
 
   ngOnInit() {
-    
+    let url: string = this._router.url;
+
+    if(url.includes('items')) {
+      this.menuSelected = 1;
+
+    } else if(url.includes('historial')) {
+      this.menuSelected = 2;
+
+    } else {
+      this.menuSelected = 3;
+    }
   }
 
-  showMenu() {
-    this.show = !this.show;
-  
-    
+  goTo(route: string) {
+    this._router.navigate(['pages', route])
   }
-
 }

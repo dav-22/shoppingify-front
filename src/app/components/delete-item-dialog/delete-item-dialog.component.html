@@ -1,0 +1,21 @@
+<div mat-dialog-title>
+    <h1>Eliminar producto</h1>
+</div>
+<div mat-dialog-content>
+
+  <h3>Estás seguro que deseas eliminar el producto ({{ data.item.name }})? </h3>
+  
+</div>
+<div mat-dialog-actions>
+
+  <button class="btn-save d-flex justify-content-center gap-2" [disabled]="loading" (click)="delete()">
+    <span>
+      {{ !loading ? 'Eliminar' : 'Eliminando'}}
+    </span>
+    <div *ngIf="loading">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span class="sr-only">Loading...</span>
+    </div>
+    
+  </button>
+</div>
