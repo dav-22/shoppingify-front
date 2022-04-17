@@ -1,5 +1,50 @@
 <app-side-bar></app-side-bar>
 
-<p>
-  historial works!
-</p>
+<div class="main h-100 w-100 d-flex justify-content-end">
+  <div class="content d-flex">
+    <div class="lists">
+      <div class="title d-flex align-items-center">
+        <h1>Historial de listas</h1>
+      </div>
+
+      <div class="list d-flex flex-column" *ngFor="let l of lists">
+        <h3>{{ l.createdAt | date: 'MMMM yyyy' | titlecase }}</h3>
+        <div
+          class="list-info d-flex p-4 justify-content-between align-items-center"
+        >
+          <div class="name">
+            <strong>{{ l.name }}</strong>
+          </div>
+          <div class="info d-flex gap-3 align-items-center">
+            <div class="d-flex gap-2 align-items-center date">
+              <i class="fa-solid fa-calendar"></i>
+              <span>{{ l.createdAt | date: 'EEEE dd/MM/yyyy' | titlecase }}</span>
+            </div>
+
+            <div
+              class="status completed"
+              [ngClass]="{
+                'in-progress': !l.status,
+                cancelled: l.status === 'cancelled',
+                completed: l.status === 'completed'
+              }"
+            >
+              {{
+                !l.status
+                  ? "En progreso"
+                  : l.status === "completed"
+                  ? "Completado"
+                  : "Cancelado"
+              }}
+            </div>
+            <i class="fa-solid fa-chevron-right arrow" (click)="openDialog(l)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <app-shopping-list [itemList]="[]"></app-shopping-list>
+    </div>
+  </div>
+</div>

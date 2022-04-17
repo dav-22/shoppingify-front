@@ -1,0 +1,20 @@
+
+<div mat-dialog-title class="d-flex flex-column">
+    <h1>Lista: {{ data.list.name }}</h1>
+    <div class="d-flex gap-2 date align-items-center">
+      <i class="fa-solid fa-calendar"></i>
+      <small>{{ data.list.createdAt | date: 'EEEE dd/MM/yyyy' | titlecase}}</small>
+    </div>
+    
+</div>
+<div mat-dialog-content class="p-3" class="items">
+
+    <div class="item d-flex justify-content-between" *ngFor="let s of data.list.shoppingLists">
+      <span>{{ s.item.name }}</span>
+      <small class="count">Cant. {{ s.count }}</small>
+    </div>
+
+</div>
+<!-- <div mat-dialog-actions>
+
+</div> -->

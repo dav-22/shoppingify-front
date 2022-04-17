@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
+import { ListDetailDialogComponent } from './list-detail-dialog/list-detail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dial
     ItemDetailComponent,
     ShoppingListComponent,
     AddCategoryDialogComponent,
-    DeleteItemDialogComponent
+    DeleteItemDialogComponent,
+    ListDetailDialogComponent
   ],
   imports: [
     CommonModule,

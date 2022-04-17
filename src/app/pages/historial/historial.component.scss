@@ -1,0 +1,56 @@
+.main {
+
+    .content {
+        width: 85%;
+        
+        .lists {
+                width: 70%;
+
+            .title {
+                height: 15%;
+            }
+
+            .list {
+                .list-info {
+                    .info {
+                        i {
+                            font-size: large;
+                        }
+                        .arrow {
+                            color: orange;
+                        }
+                        .date {
+                            color: gray;
+                        }
+
+                        .status {
+                            border: 1px solid;
+                            padding: 5px;
+                            border-radius: 10px;
+                        }
+
+                        .in-progress {
+                            border-color: rgb(114, 211, 114);
+                            color: rgb(114, 211, 114);
+                        }
+
+                        .cancelled {
+                            border-color: red;
+                            color: red;
+                        }
+
+                        .completed {
+                            border-color: aqua;
+                            color: aqua;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-side {
+            background-color: aqua;
+            width: 30%;
+        }
+    }
+}
