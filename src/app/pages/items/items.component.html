@@ -1,7 +1,7 @@
 <app-side-bar></app-side-bar>
 <div class="main d-flex justify-content-end h-100">
   <div class="content d-flex gap-2">
-    <div class="items d-flex flex-column align-items-start h-100">
+    <div class="items d-flex flex-column align-items-start">
       <div class="title d-flex align-items-center">
         <h1>Lista de productos a comprar</h1>
       </div>
@@ -36,6 +36,7 @@
         [itemList]="itemList"
         *ngIf="show === 3"
         (goToAdd)="show = $event"
+        (cancelListItem)="itemList = $event"
       ></app-shopping-list>
     </div>
   </div>

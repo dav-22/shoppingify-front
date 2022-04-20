@@ -45,7 +45,7 @@
     }
 
     .list {
-        padding-right: 1rem;
+        
         max-height: 50%;
         overflow-y: scroll;
         .category {
@@ -61,7 +61,10 @@
                 font-weight: bold;
                 font-size: medium;
             }
-
+            i {
+                color: orange;
+                cursor: pointer;
+            }
             .count {
                 width: 80px;
                 border: 2px solid orange;

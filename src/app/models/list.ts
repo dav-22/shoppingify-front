@@ -4,6 +4,6 @@ import { Shopping } from "./shopping";
 export class List extends Base {
     name: string;
     userId: number;
-    shoppingLists: Shopping;
+    shoppingLists: Shopping[];
     status: string;
 }

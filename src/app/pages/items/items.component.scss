@@ -6,7 +6,10 @@
 
     .items {
       // width: 55%;
+      height: 100%;
+      overflow: auto;
       width: 70%;
+      padding-bottom: 1rem;
       .title {
         height: 15%;
       }
@@ -62,13 +65,15 @@
             }
         
             .items {
+                overflow: unset;
                 display: flex;
                 align-items: center;
                 width: 100%;
                 padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
+                padding-bottom: 2rem;
                 padding-left: 2rem;
                 padding-right: 2rem;
+                height: auto;
                 h1 {
                     text-align: center;
                 }

@@ -17,4 +17,11 @@ export class ListService {
   all(): Observable<List[]> {
     return this._http.get<List[]>(`${this.url}/${this.controller}`);
   }
+
+  update(listId: number, listName: string, itemList: any): Observable<boolean>{
+    return this._http.put<boolean>(
+      `${this.url}/${this.controller}/shoppingList/${listId}`, 
+      {listName: listName, itemList: itemList}
+    );
+  }
 }

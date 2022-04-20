@@ -54,12 +54,12 @@ export class ItemsComponent implements OnInit {
     this.show = 3;
     if(this.itemList.length == 0) {
 
-      this.itemList.push({item: this.itemToAdd, count: 1});
+      this.itemList.push({item: this.itemToAdd, count: 1, listId: 0});
 
     } else  {
       if(!this.itemList.find(l => l.item.id == e.id)) {
 
-        this.itemList.push({item: this.itemToAdd, count: 1});
+        this.itemList.push({item: this.itemToAdd, count: 1, listId: 0});
       } else {
         this._toast.warning('El producto ya se encuentra en la lista!');
       }

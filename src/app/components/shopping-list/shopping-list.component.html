@@ -10,9 +10,19 @@
     </div>
   </div>
 
-  <div class="title d-flex justify-content-center align-items-center">
+  <div
+    class="title text-center flex-column gap-2 d-flex justify-content-center align-items-center"
+  >
     <span>{{ !listName.value ? "Nombre de la lista" : listName.value }}</span>
     <!-- <i class="fa-solid fa-pencil"></i> -->
+    <div
+      class="text-danger d-flex align-items-center gap-2"
+      *ngIf="itemList.length > 0 || !listName.invalid"
+      (click)="cancelList()"
+    >
+      <small>Cancelar cambios</small>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
   </div>
 
   <div class="list h-50">
@@ -23,34 +33,55 @@
         </div> -->
         <div
           class="item d-flex align-items-center justify-content-between pb-4"
+          
         >
-          <span>{{ il.item.name }}</span>
-          <div class="count d-flex justify-content-around align-items-center">
+          <span [style]="il.count == 0 ? 'text-decoration: line-through;' : ''">{{ il.item.name }}</span>
+          <i class="fa-solid fa-trash-can" (click)="removeItem(il.item.id)" *ngIf="il.count > 0"></i>
+          <div class="count d-flex justify-content-around align-items-center" *ngIf="il.count > 0">
             <i class="fa-solid fa-minus" (click)="decrease(il)"></i>
             <span>{{ il.count }}</span>
             <i class="fa-solid fa-plus" (click)="increment(il)"></i>
+
+          </div>
+          <div *ngIf="il.count == 0" (click)="restoreItem(il.item.id)">
+            <i class="fa-solid fa-rotate-left"></i>
           </div>
         </div>
       </div>
     </div>
 
     <div
-      class="h-100 no-items d-flex justify-content-center align-items-center"
+      class="h-100 no-items d-flex justify-content-center align-items-center flex-column"
       *ngIf="itemList.length == 0"
     >
       <h3>No hay productos todavia</h3>
+      <mat-form-field class="example-full-width w-100" appearance="fill" *ngIf="listName.invalid">
+        <mat-label>Seleccionar Lista</mat-label>
+        <input
+          type="text"
+          placeholder="Elegir uno"
+          aria-label="Number"
+          matInput
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selectedList($event.option.value)">
+          <mat-option *ngFor="let l of lists" [value]="l.name">
+            {{ l.name }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
     </div>
   </div>
 
   <div class="save d-flex align-items-center justify-content-center gap-2">
-    <mat-form-field style="width: 60%;" appearance="fill">
+    <mat-form-field style="width: 60%" appearance="fill">
       <mat-label>Nombre de la lista</mat-label>
       <input matInput [formControl]="listName" />
     </mat-form-field>
     <button
       class="btn-save"
       [disabled]="listName.invalid || itemList.length == 0"
-      (click)="saveList()"
+      (click)="addOrUpdate()"
     >
       Guardar
     </button>
