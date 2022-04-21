@@ -1,0 +1,148 @@
+.main {
+    background-color: #FFF0DE;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+
+    .add {
+        height: 150px;
+        max-height: 150px;
+        border-radius: 20px;
+        width: 100%;
+        background-color: #80485B;
+
+        h3 {
+            color: white;
+        }
+
+        i {
+            padding-left: 1rem;
+            color: #3F3D56;
+        }
+
+        .btn-add {
+            font-size: smaller;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+
+       
+    }
+
+    .title {
+        padding: 1rem 0;
+        span {
+            font-size: x-large;
+        }
+
+        i {
+            font-size: medium;
+            cursor: pointer;
+        }
+    }
+
+    .list {
+        
+        max-height: 50%;
+        overflow-y: scroll;
+        .category {
+
+            small {
+                color: gray;
+                font-weight: bold;
+            }
+        }
+        
+        .item {
+            span {
+                font-weight: bold;
+                font-size: medium;
+            }
+            i {
+                color: orange;
+                cursor: pointer;
+            }
+            .count {
+                width: 80px;
+                border: 2px solid orange;
+                border-radius: 15px;
+                height: 30px;
+
+                color: orange;
+                small {
+                    font-weight: bold;
+                }
+            }
+            
+        }
+
+
+    }
+
+    .save {
+        padding-top: 0.5rem;
+        width: 100%;
+        .btn-save {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            font-size: smaller;
+        }
+
+        .btn-cancel {
+            font-size: smaller;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+    }
+
+    /* width */
+  ::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #FFF0DE;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: orange; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    .main {
+        min-height: 350px;
+        .title {
+            margin: 1rem 0;
+        }
+    }
+}
+
+
+.form-check-input {
+    border-color: orange;
+    background-color: orange;
+    
+}

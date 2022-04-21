@@ -5,6 +5,7 @@
         
         .lists {
             width: 70%;
+            height: 100%;
             overflow: auto;
             .title {
                 height: 15%;
@@ -49,7 +50,7 @@
         }
 
         .right-side {
-            background-color: aqua;
+           
             width: 30%;
         }
     }
@@ -71,67 +72,97 @@
 }
 
 @media screen and (min-width: 200px) and (max-width: 800px) {
-    .main {
-        display: flex;
+    // .main {
+    //     display: flex;
         
+
+    //     .content {
+    //         display: flex;
+    //         flex-direction: column;
+            
+    //         .right-side {
+    //             width: 100%;
+    //             // padding: 2rem;
+
+    //             // padding-left: 1.5rem;
+    //         }
+        
+    //         .lists {
+    //             overflow: unset;
+    //             // display: flex;
+    //             // align-items: center;
+    //             width: 100%;
+                
+    //             // padding-top: 1.5rem;
+    //             padding-bottom: 1.5rem;
+    //             // padding-left: 2rem;
+    //             // padding-right: 2rem;
+    //             .date-title {
+    //                 display: flex;
+    //                 justify-content: center;
+                    
+    //             }
+
+    //             .list-info {
+    //                 display: flex;
+    //                 flex-direction: column;
+    //                 .name {
+    //                     padding-bottom: 1rem;
+    //                 }
+    //                 .info {
+    //                     width: 100%;
+    //                     display: flex;
+    //                     justify-content: space-between;
+    //                 }
+    //             }
+
+    //             .title {
+    //                 display: flex;
+    //                 justify-content: center;
+    //                 h1 {
+    //                     text-align: center;
+    //                 }
+    //             }
+    //             // .list {
+    //             //     .category {
+    //             //         width: 100%;
+    //             //         display: flex;
+    //             //         justify-content: flex-start;
+    //             //     }   
+    //             //     display: flex;
+    //             //     flex-direction: column;
+    //             //     // align-items: center;
+    //             // }
+    //         }
+    //     }
+    
+    // }
+    .main {
 
         .content {
             display: flex;
             flex-direction: column;
-            .right-side {
-                width: 100%;
-                // padding: 2rem;
 
-                // padding-left: 1.5rem;
-            }
-        
             .lists {
                 overflow: unset;
                 // display: flex;
                 // align-items: center;
                 width: 100%;
+                
                 // padding-top: 1.5rem;
                 padding-bottom: 1.5rem;
                 // padding-left: 2rem;
                 // padding-right: 2rem;
-                .date-title {
-                    display: flex;
-                    justify-content: center;
-                    
-                }
 
-                .list-info {
-                    display: flex;
-                    flex-direction: column;
-                    .name {
-                        padding-bottom: 1rem;
-                    }
-                    .info {
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                }
+              .date-title {
+                  display: flex;
+                  justify-content: center;
+              }
+            }
 
-                .title {
-                    display: flex;
-                    justify-content: center;
-                    h1 {
-                        text-align: center;
-                    }
-                }
-                // .list {
-                //     .category {
-                //         width: 100%;
-                //         display: flex;
-                //         justify-content: flex-start;
-                //     }   
-                //     display: flex;
-                //     flex-direction: column;
-                //     // align-items: center;
-                // }
+            .right-side {
+                width: 100%;
             }
         }
-    
     }
 }

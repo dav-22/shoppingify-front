@@ -14,6 +14,7 @@ import { AddCategoryDialogComponent } from './add-category-dialog/add-category-d
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
 import { ListDetailDialogComponent } from './list-detail-dialog/list-detail-dialog.component';
+import { CheckItemListComponent } from './check-item-list/check-item-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListDetailDialogComponent } from './list-detail-dialog/list-detail-dial
     ShoppingListComponent,
     AddCategoryDialogComponent,
     DeleteItemDialogComponent,
-    ListDetailDialogComponent
+    ListDetailDialogComponent,
+    CheckItemListComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { ListDetailDialogComponent } from './list-detail-dialog/list-detail-dial
     ItemCardComponent,
     ItemFormComponent,
     ItemDetailComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    CheckItemListComponent
   ]
 })
 export class ComponentsModule { }

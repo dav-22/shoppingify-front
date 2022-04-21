@@ -1,0 +1,66 @@
+<div class="main w-100 h-100 d-flex flex-column" >
+  <div class="add d-flex justify-content-around align-items-center p-1 h-25">
+    <!-- <div class="h-100  d-flex align-items-center">
+
+      <i style="font-size: 5rem;" class="fa-solid fa-wine-bottle"></i>
+    </div> -->
+    <div class="d-flex flex-column justify-content-around align-items-center">
+      <h3 class="text-center">No encontras algún producto?</h3>
+      <button class="btn-add" (click)="addItem()">Agregar</button>
+    </div>
+  </div>
+
+  <div *ngIf="!list" class="d-flex align-items-center h-75 text-center">
+    <h4>Seleccioná una lista para empezar a marcar tus compras.</h4>
+  </div>
+  <div *ngIf="list" class="h-75 d-flex flex-column justify-content-between">
+    <div
+      class="title text-center flex-column gap-2 d-flex justify-content-center align-items-center"
+    >
+      <span>{{ list.name }}</span>
+      <!-- <i class="fa-solid fa-pencil"></i> -->
+    </div>
+
+    <div class="list h-50">
+      <div *ngIf="list.shoppingLists.length > 0">
+        <div *ngFor="let l of list.shoppingLists">
+          <!-- <div class="category pb-4">
+            <small>Fruta - verdura</small>
+          </div> -->
+          <div
+            class="item d-flex align-items-center justify-content-between pb-4"
+            
+          >
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" [checked]="l.checked" value="" id="flexCheckDefault" (change)="checked(l, $event)">
+            </div>
+            <span>{{ l.item.name }}</span>
+            
+            <div class="count d-flex align-items-center justify-content-center">
+              <small>Cant. {{ l.count }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="list.shoppingLists.length == 0" class="d-flex align-items-center text-center">
+        <span>Ésta lista no contiene productos.</span>
+      </div>
+    </div>
+
+    <div class="save d-flex align-items-center justify-content-center gap-2">
+      <button
+        class="btn-cancel"
+        (click)="cancel()"
+      >
+        Cancelar
+      </button>
+      <button
+        class="btn-save"
+        (click)="complete()"
+      >
+        Completar
+      </button>
+    </div>
+  </div>
+</div>
+

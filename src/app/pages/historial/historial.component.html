@@ -40,14 +40,14 @@
                   : "Cancelado"
               }}
             </div>
-            <i class="fa-solid fa-chevron-right arrow" (click)="openDialog(l)"></i>
+            <i class="fa-solid fa-chevron-right arrow" (click)="setList(l)"></i>
           </div>
         </div>
       </div>
     </div>
 
     <div class="right-side">
-      <app-shopping-list [itemList]="[]"></app-shopping-list>
+      <app-check-item-list [list]="list"></app-check-item-list>
     </div>
   </div>
 </div>

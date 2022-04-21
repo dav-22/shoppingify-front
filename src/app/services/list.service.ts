@@ -24,4 +24,13 @@ export class ListService {
       {listName: listName, itemList: itemList}
     );
   }
+
+  complete(listId: number, list: List): Observable<boolean> {
+    return this._http.put<boolean>(`${this.url}/${this.controller}/complete/${listId}`, {list: list});
+  }
+
+  
+  cancel(listId: number): Observable<boolean> {
+    return this._http.put<boolean>(`${this.url}/${this.controller}/cancel/${listId}`, {});
+  }
 }

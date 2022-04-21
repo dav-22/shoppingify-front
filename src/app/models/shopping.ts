@@ -6,4 +6,5 @@ export class Shopping extends Base {
     item?: Item;
     listId: number;
     count: number;
+    checked: number;
 }
