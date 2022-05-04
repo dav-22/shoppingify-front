@@ -19,7 +19,6 @@ export class HistorialComponent implements OnInit {
   list: List;
   constructor(
     private _listService: ListService,
-    public dialog: MatDialog,
     private _toast: ToastrService
   ) { }
 
@@ -42,24 +41,12 @@ export class HistorialComponent implements OnInit {
       })
   }
 
-  openDialog(list: List) {
-    this.dialog.open(ListDetailDialogComponent, {
-      width: '500px',
-      data: {
-        list: list
-      }
-    });
-  }
+ 
 
   setList(list: List) {
-    if(list.status == 'completed') {
-      this._toast.info(`La lista ${list.name} fue completada`);
-    } else if(list.status == 'cancelled') {
-      this._toast.info(`La lista ${list.name} fue cancelada`);
-    } else {
-      this.list = list;
-      localStorage.setItem('list', JSON.stringify(list))
-    }
+    this.list = list;
+    localStorage.setItem('list', JSON.stringify(list))
+    
    
   }
 }

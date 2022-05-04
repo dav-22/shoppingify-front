@@ -26,3 +26,23 @@
         }
     }
 }
+
+.btn-save {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.btn-cancel {
+    font-size: smaller;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}

@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { List } from 'src/app/models/list';
 import { Shopping } from 'src/app/models/shopping';
 import { ListService } from 'src/app/services/list.service';
+import { ListDetailDialogComponent } from '../list-detail-dialog/list-detail-dialog.component';
 
 @Component({
   selector: 'app-check-item-list',
@@ -16,10 +18,12 @@ export class CheckItemListComponent implements OnInit {
 
   constructor(
     private _listService: ListService,
-    private _toast: ToastrService
+    private _toast: ToastrService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit() {
+    
   }
 
   addItem() {
@@ -27,27 +31,25 @@ export class CheckItemListComponent implements OnInit {
   }
 
   complete() {
-    this._listService.complete(this.list.id, this.list)
-      .subscribe({
-        next: (res) => {
-          this._toast.success('Lista completada');          
-        },
-        error: (err) => {
-          this._toast.error('Ocurrio un error');
-        }
-      })
+    
+    this.openDialog(this.list, 'complete');
+
   }
 
   cancel() {
-    this._listService.cancel(this.list.id)
-      .subscribe({
-        next: (res) => {
-          this._toast.success('Lista cancelada');          
-        },
-        error: (err) => {
-          this._toast.error('Ocurrio un error');
-        }
-      })
+   
+    this.openDialog(this.list, 'cancel');
+  }
+
+  openDialog(list: List, action: string) {
+    this.dialog.open(ListDetailDialogComponent, {
+      width: '500px',
+      data: {
+        list: list,
+        action: action
+
+      }
+    });
   }
 
   checked(l: Shopping, e) {

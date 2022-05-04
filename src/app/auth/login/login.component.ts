@@ -41,4 +41,8 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  register() {
+    this._router.navigate(['auth', 'register']);
+  }
 }

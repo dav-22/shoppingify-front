@@ -1,6 +1,6 @@
 
 <div mat-dialog-title class="d-flex flex-column">
-    <h1>Lista: {{ data.list.name }}</h1>
+    <h1>{{data.action === 'complete' ? 'Completar' : 'Cancelar'}} lista '{{ data.list.name }}'?</h1>
     <div class="d-flex gap-2 date align-items-center">
       <i class="fa-solid fa-calendar"></i>
       <small>{{ data.list.createdAt | date: 'EEEE dd/MM/yyyy' | titlecase}}</small>
@@ -15,6 +15,7 @@
     </div>
 
 </div>
-<!-- <div mat-dialog-actions>
-
-</div> -->
+<div mat-dialog-actions class="d-flex justify-content-center gap-3">
+  <button class="btn-cancel" mat-dialog-close>Cerrar</button>
+  <button class="btn-save" (click)="accept()">{{ data.action === 'complete' ? 'Completar' : 'Cancelar' }}</button>
+</div>

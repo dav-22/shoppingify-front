@@ -30,4 +30,9 @@ export class SideBarComponent implements OnInit {
   goTo(route: string) {
     this._router.navigate(['pages', route])
   }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this._router.navigate(['auth'])
+  }
 }

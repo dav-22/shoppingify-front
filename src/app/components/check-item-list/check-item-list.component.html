@@ -32,7 +32,7 @@
             
           >
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" [checked]="l.checked" value="" id="flexCheckDefault" (change)="checked(l, $event)">
+              <input class="form-check-input" type="checkbox" [disabled]="list.status" [checked]="l.checked" value="" id="flexCheckDefault" (change)="checked(l, $event)">
             </div>
             <span>{{ l.item.name }}</span>
             
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="save d-flex align-items-center justify-content-center gap-2">
+    <div class="save d-flex align-items-center justify-content-center gap-2" *ngIf="!list.status">
       <button
         class="btn-cancel"
         (click)="cancel()"
@@ -60,6 +60,9 @@
       >
         Completar
       </button>
+    </div>
+    <div class="save d-flex align-items-center justify-content-center gap-2" *ngIf="list.status">
+      <span class="btn-cancel">La lista fue {{ list.status === 'completed' ? 'completada' : 'cancelada'}}</span>
     </div>
   </div>
 </div>
